@@ -128,8 +128,7 @@ input{
 }
 .message{
     width: 60%;
-    margin: auto;
-    margin-top: 4rem;
+    margin: 4rem auto;
     border-radius: 6px;
     height: auto;
     word-wrap: break-word;
@@ -150,8 +149,10 @@ input{
     border-radius: 18px;
   }
   .floating-time{
-    left: 60%;
+    top: -100%;
+    left: 50%;
     z-index: 2;
+    transform: translateX(-50%);
   }
 @media screen and (max-width: 768px) {
     .right-pattern{
@@ -174,7 +175,5 @@ input{
     .message{
         width: 80%;
     }
-    .floating-time{
-        left: 45%;
-      }
+   
 }

@@ -31,14 +31,16 @@ const MessageBox = ({activeClass, setActiveClass, isDarkMode}) => {
    isDarkMode={isDarkMode}
    messages={messages}
    />
-   <span className={`position-fixed floating-time px-2 rounded-1 mt-4 bg-dark text-white`}>{formatDate(messages[0]?.created_at)}</span>
-   <div>
+
+   <div className='pt-4'>
     {
       messages && messages?.map((i) => (
-
-    <div className={`message p-3 ${!isDarkMode ? "light border border-2 text-black" : "text-white"}`}>
+        <>
+    <div className={`message p-3 position-relative ${!isDarkMode ? "light border border-2 text-black" : "text-white"}`}>
+        <span className={`position-absolute floating-time px-2 rounded-1 mt-4 bg-dark text-white`}>{formatDate(i?.sender?.updated_at)}</span>
       {i?.message}
     </div>
+  </>
       ))
     }
    </div>
